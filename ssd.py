@@ -101,7 +101,7 @@ def SSD300(input_shape, num_classes=21):
     net['pool5'] = MaxPooling2D((3, 3), strides=(1, 1), padding='same',
                                 name='pool5')(net['conv5_3'])
     # FC6
-    net['fc6'] = AtrousConvolution2D(1024, 3,  atrous_rate=(6, 6),
+    net['fc6'] = Convolution2D(1024, 3,  dilation_rate=(6, 6),
                                      activation='relu', padding='same',
                                      name='fc6')(net['pool5'])
     # x = Dropout(0.5, name='drop6')(x)
