@@ -45,10 +45,11 @@ class Normalize(Layer):
 
     def call(self, x, mask=None):
         output = K.l2_normalize(x, self.axis)
+        print("//////////////////////////////////////////1")
         print(output)
-        print("////////////////////////////////////////")
-        print(self.gamma)
         print("////////////////////////////////////////2")
+        print(self.gamma)
+        print("////////////////////////////////////////3")
         
         output2 = output*self.gamma
         return output2
