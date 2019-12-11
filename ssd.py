@@ -241,7 +241,7 @@ def SSD300(input_shape, num_classes=21):
     priorbox = PriorBox(img_size, 276.0, max_size=330.0, aspect_ratios=[2, 3],
                         variances=[0.1, 0.1, 0.2, 0.2],
                         name='pool6_mbox_priorbox')
-    if K.image_dim_ordering() == 'tf':
+    if K.image_data_format() == 'tf':
         target_shape = (1, 1, 256)
     else:
         target_shape = (256, 1, 1)
