@@ -42,7 +42,7 @@ def SSD300(input_shape, num_classes=21):
                                    activation='relu',
                                    padding='same',
                                    name='conv1_2')(net['conv1_1'])
-    net['pool1'] = MaxPooling2D((2, 2), strides=(2, 2), border_mode='same',
+    net['pool1'] = MaxPooling2D((2, 2), strides=(2, 2), padding='same',
                                 name='pool1')(net['conv1_2'])
     # Block 2
     net['conv2_1'] = Convolution2D(128, 3, 
