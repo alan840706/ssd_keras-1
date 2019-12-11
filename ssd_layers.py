@@ -45,8 +45,7 @@ class Normalize(Layer):
 
     def call(self, x, mask=None):
         output = K.l2_normalize(x, self.axis)
-        output = tf.matmul(self.gamma,output)
-        return output
+        return K.dot(output,self.gamma)
 
 
 class PriorBox(Layer):
